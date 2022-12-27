@@ -12,7 +12,6 @@ export const SearchMovies = ({ onSubmit }) => {
       return;
     }
     onSubmit(value.query);
-    resetForm();
   };
 
   return (
