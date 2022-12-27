@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Field, Form } from 'formik';
 
 export const SearchMoviesForm = styled.div`
   top: 0;
@@ -16,7 +15,7 @@ export const SearchMoviesForm = styled.div`
   padding-bottom: 12px;
     `;
     
-export const StyledForm = styled(Form)`
+export const StyledForm = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
@@ -31,7 +30,7 @@ export const StyledForm = styled(Form)`
      border-color: black; 
     }
 `;
-export const Input = styled(Field)`
+export const Input = styled.input`
 display: inline-block;
   width: 100%;
   font: inherit;

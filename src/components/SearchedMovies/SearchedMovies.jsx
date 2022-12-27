@@ -1,31 +1,27 @@
 import { SearchMoviesForm, StyledForm, SearchButton, Input } from "./SearchedMovies.styled";
 import PropTypes from 'prop-types';
 import { GoSearch } from 'react-icons/go';
-import { Formik } from 'formik';
 
-const initialValues = {
-  query: '',
-};
-export const SearchMovies = ({ onSubmit }) => {
-  const handleSubmit = (value, { resetForm }) => {
-    if (value.query.trim() === '') {
-      return;
-    }
-    onSubmit(value.query);
-  };
-
+export const SearchMovies = ({ value, onSubmit }) => {
   return (
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-          <SearchMoviesForm>
-              <StyledForm>
-                  <Input name="query" type="text" placeholder="Search the movie"/>
-                   <SearchButton type="submit">
-                      <GoSearch />
-                  </SearchButton>
+      <SearchMoviesForm>
+          <StyledForm>
+          <Input
+              type="text"
+              name='query'
+              value={value}
+              placeholder="Search the movie"
+              onChange={(e) => onSubmit(e.target.value)}
+          />
+          <SearchButton type="submit">
+              <GoSearch />
+              </SearchButton>
               </StyledForm>
-              </SearchMoviesForm>
-    </Formik>
+    </SearchMoviesForm>
   );
 };
 
-SearchMovies.propTypes = { onSubmit: PropTypes.func.isRequired, };
+SearchMovies.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired, 
+};

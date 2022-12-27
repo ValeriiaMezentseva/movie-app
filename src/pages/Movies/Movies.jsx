@@ -1,5 +1,5 @@
 import { Outlet, useSearchParams } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { getSearchedMovie } from "services/api";
 import { Container } from './Movies.styled';
 import MovieList from 'components/MovieList/MovieList';
@@ -36,10 +36,13 @@ const Movies = () => {
   return (
     <>
       <Container>
-        <SearchMovies onSubmit={q => updateQuery(q)} />
+        <SearchMovies value={query} onSubmit={q => updateQuery(q)} />
         {loading && <Loader />}
       <MovieList collection={searchMovies} />
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+                <Outlet />
+            </Suspense>
+        {/* <Outlet /> */}
       </Container>
       <Toaster />
     </>
