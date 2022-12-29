@@ -1,5 +1,5 @@
 import { getMovieById } from "services/api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useLocation, useParams, Outlet } from "react-router-dom";
 import { Container , InfoWrapper, MovieDetails, StyledLink, MoreInfoList, MoreInfoItem, AdditionalInfo } from "./MovieInfo.styled";
 import { BackLink } from "components/BackLink/BackLink";
@@ -74,9 +74,9 @@ const MovieInfo = () => {
                         </StyledLink>
                     </MoreInfoItem>
                 </MoreInfoList>
-            <Outlet />
-
-
+            <Suspense fallback={<Loader />}>
+                <Outlet />
+            </Suspense>
             </Container>
             </>
     )
