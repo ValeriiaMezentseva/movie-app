@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { getMovieCast } from "services/api";
+import { getMovieCast, getSeriesCast } from "services/api";
 import { useParams } from "react-router-dom";
 import { Loader } from "components/Loader/Loader";
-import { CastList, CastItem, Name, Character } from "./MovieCast.styled";
+import { CastList, CastItem, Name, Character, NoCast } from "./MovieCast.styled";
 import noPoster from '../../images/no-poster.jpeg';
 import PropTypes from 'prop-types';
 
 const Cast = () => {
     const [cast, setCast] = useState(null);
-    const { movieId } = useParams(); 
+    const { movieId, series_id } = useParams(); 
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -18,14 +18,19 @@ const Cast = () => {
                 .then(data => setCast(data))
                 .finally(() => setLoading(false));
         }
-    }, [movieId]);
+        else if (series_id) {
+          getSeriesCast(series_id)
+            .then(data => setCast(data))
+          .finally(() => setLoading(false));
+      }
+    }, [movieId, series_id]);
 
      if (!cast) {
     return <>{loading && <Loader />}</>;
   }
     
   return cast.length === 0 ? (
-    <p>We dont't have any cast for this movie.</p>
+    <NoCast>We don't have any cast for this {movieId ? "movie" : "series"} ☹ </NoCast>
   ) : (
       <div>
       <CastList>

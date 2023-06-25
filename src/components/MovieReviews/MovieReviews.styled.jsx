@@ -14,10 +14,28 @@ export const ReviewsItem = styled.li`
 
 export const Author = styled.p`
   margin-bottom: 8px;
+  color: ${props => props.theme.colors.primaryDarkText};
 
 `;
 
 export const AuthorTitle = styled.span`
   font-size: 18px;
   font-weight: 700;
+  color: ${props => props.theme.colors.primaryDarkText};
 `;
+
+export const Content = styled.p`
+color: ${props => props.theme.colors.primaryDarkText};
+`
+
+export const NoCast = styled.h2`
+ font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: ${props => props.theme.colors.primaryDarkText};
+  text-shadow:
+             1px 10px 5px ${props => props.theme.colors.primaryDarkText},
+             1px 25px 50px ${props => props.theme.colors.primaryDarkText};
+  background-clip: text;
+  -webkit-background-clip: text;
+`;  

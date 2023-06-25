@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
-import { Poster, Info, Title, MovieInfo, Rating } from './MovieCard.styled';
+
+import { Poster, Info, Title, MovieInfo, Rating, } from './MovieCard.styled';
 import noPoster from '../../images/no-poster.jpeg';
 
 
-export const MovieCard = ({ id, title, poster, releaseDate, voteAverage = 1, }) => {
+
+export const MovieCard = ({ id, title, poster, releaseDate, voteAverage = 1, onClick, }) => {
+    
     return (
-        <>
-            <div>
+        <div onClick={onClick} >
+           
                 <Poster
                     src={poster ? `https://image.tmdb.org/t/p/w300/${poster}` : noPoster}
                     alt={title}
-                    loading="lazy" />
-            </div>
+                loading="lazy" />
             <Info>
                 <Title>{title}</Title>
                 <MovieInfo>
@@ -19,7 +21,7 @@ export const MovieCard = ({ id, title, poster, releaseDate, voteAverage = 1, }) 
                     <Rating>{voteAverage.toFixed(1)}</Rating>
                 </MovieInfo>
             </Info>
-        </>
+        </div>
     )
 
 };

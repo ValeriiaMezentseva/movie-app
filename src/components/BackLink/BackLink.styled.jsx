@@ -6,11 +6,11 @@ display: inline-flex;
 align-items: center;
 gap: 4px;
 padding: 8px 0;
-color: black;
+color: ${props => props.theme.colors.primaryDarkText};
 text-decoration: none;
 font-weight: 500;
 text-transform: uppercase;
 :hover {
-    color: #bd0000;
+    color: ${props => props.theme.colors.redColor};
   }
 `;
