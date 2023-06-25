@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.main`
-  width: 320px;
-  margin: 0 auto;
-  padding: 0 16px;
+  width: 100%;
+  /* margin: 0 auto;
+  padding: 0 16px; */
 
-      @media screen and (min-width: 480px) {
+      /* @media screen and (min-width: 480px) {
    width: 450px;
   }
 
@@ -15,7 +15,7 @@ export const Container = styled.main`
 
   @media screen and (min-width: 940px) {
     width: 800px;
-  }
+  } */
 
 
 `;
@@ -28,11 +28,12 @@ export const InfoWrapper = styled.div`
   align-items: center;
   gap: 20px;
   padding: 25px;
+  max-width: 100%;
   border: 3px solid black;
   background-color: ${props => props.theme.colors.backgroundColor};
   border-radius: 24px;
   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
-   @media screen and (min-width: 678px) {
+   @media screen and (min-width: 770px) {
   flex-direction: row;
   }
 `;
@@ -65,6 +66,11 @@ export const MovieDetails = styled.div`
   }
   
     @media screen and (min-width: 678px) {
+    width: 480px;
+
+  }
+
+    @media screen and (min-width: 770px) {
     width: 300px;
     align-items: flex-start; 
   }
@@ -141,7 +147,7 @@ export const AddButton = styled.button`
   margin-top: 10px;
   border-radius: 8px;
   background-color: ${props =>
-    props.disabled ? "gray" : "black"}; // Use gray color for disabled button
+    props.disabled ? "gray" : "black"};
   color: white;
   font-size: 15px;
   font-weight: bold;

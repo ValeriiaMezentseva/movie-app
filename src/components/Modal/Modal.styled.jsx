@@ -9,7 +9,6 @@ const fadeIn = keyframes`
   }
 `;
 
-
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -21,13 +20,13 @@ export const Overlay = styled.div`
 
   background-color: rgba(0, 0, 0, 0.1);
 
-  animation: ${fadeIn} 0.3s ease-in; /* Add fade-in animation */
+  animation: ${fadeIn} 0.3s ease-in; 
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 23px;
-  right: 28px;
+  top: 25px;
+  right: 30px; 
 
   display: flex;
   align-items: center;
@@ -46,7 +45,7 @@ export const CloseButton = styled.button`
     fill: red;
   }
 
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 
   &:hover {
     transform: scale(1.2);
@@ -58,9 +57,26 @@ export const ModalWindow = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: ${fadeIn} 0.3s ease-in;
 
-  border-radius: 8px;
+   width: 320px;
+  max-width: 80%;
+  max-height: 80%; 
+
+
+
+
   overflow-y: auto;
   z-index: 5;
+
+        @media screen and (min-width: 480px) {
+   width: 450px;
+  }
+
+     @media screen and (min-width: 678px) {
+   width: 650px;
+  }
+
+  @media screen and (min-width: 940px) {
+    width: 800px;
+  }
 `;

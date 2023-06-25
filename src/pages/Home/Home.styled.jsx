@@ -3,13 +3,12 @@ import { NavLink } from "react-router-dom";
 
 
 export const Link = styled(NavLink)`
+  align-items: center;
+  text-decoration: none;
+  color: ${props => props.theme.colors.primaryDarkText};
+  font-weight: 500;
 
-align-items: center;
-text-decoration: none;
-color: ${props => props.theme.colors.primaryDarkText};
-font-weight: 500;
-
-&.active {
+  &.active {
     color: ${props => props.theme.colors.primaryLightText};
     background-color: ${props => props.theme.colors.redColor};
   }
@@ -17,20 +16,20 @@ font-weight: 500;
 
 
 export const Title = styled.h2`
-text-align: left;
-margin-bottom: 0; 
-margin-left: 75px;  
-color: ${props => props.theme.colors.primaryDarkText};
-`; 
+  text-align: center;
+  margin-bottom: 0;
+  color: ${props => props.theme.colors.primaryDarkText};
+`;
 
 export const Container = styled.main`
-margin: 10px;
-padding: 0 16px;
-`; 
+  margin: 10px;
+  padding: 0 16px;
+`;
 
 export const TrendingBox = styled.div`
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
   border-radius: 10px;
+  overflow: hidden;
 `;
 
 export const TrendingList = styled.div`
@@ -68,7 +67,7 @@ export const MovieList = styled.ul`
 `;
 
 export const ScrollButton = styled.button`
-  display: flex;
+ display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
@@ -83,7 +82,7 @@ export const ScrollButton = styled.button`
   &:hover {
     color: #ec0000;
     transform: scale(1.2);
-  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 
