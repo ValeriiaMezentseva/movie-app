@@ -1,6 +1,8 @@
-import { HiArrowLeft } from "react-icons/hi";
-import { StyledLink } from "./BackLink.styled";
 import PropTypes from 'prop-types'
+import { HiArrowLeft } from "react-icons/hi";
+
+import { StyledLink } from "./BackLink.styled";
+
 
 
 export const BackLink = ({ to, children }) => {
@@ -14,9 +16,9 @@ export const BackLink = ({ to, children }) => {
 
 BackLink.propTypes = {
   to: PropTypes.object.isRequired,
-   children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ]).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
 
-}
+};

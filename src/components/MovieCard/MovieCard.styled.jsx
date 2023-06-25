@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-
-
 export const MovieCardContainer = styled.div`
   width: 100%;
   height: 100%;

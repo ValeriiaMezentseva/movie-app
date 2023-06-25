@@ -3,7 +3,6 @@ import { lazy } from 'react';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from "components/theme";
-// import { GlobalStyle } from "components/GobalStyles";
 
 import SharedLayout from 'components/SharedLayout';
 
@@ -27,7 +26,6 @@ export const App = () => {
   return (
     <div>
       <ThemeProvider theme={darkTheme ? theme.dark : theme.light}>
-        {/* <GlobalStyle /> */}
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />

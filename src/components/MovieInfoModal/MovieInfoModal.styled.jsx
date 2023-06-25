@@ -2,22 +2,6 @@ import styled from "@emotion/styled";
 
 export const Container = styled.main`
   width: 100%;
-  /* margin: 0 auto;
-  padding: 0 16px; */
-
-      /* @media screen and (min-width: 480px) {
-   width: 450px;
-  }
-
-     @media screen and (min-width: 678px) {
-   width: 650px;
-  }
-
-  @media screen and (min-width: 940px) {
-    width: 800px;
-  } */
-
-
 `;
 
 export const InfoWrapper = styled.div`

@@ -109,7 +109,7 @@ display: flex;
 margin-top: 10px; 
 padding: 0; 
 
-         @media screen and (min-width: 895px) {
+ @media screen and (min-width: 895px) {
    margin-top: 40px; 
   }
 `
@@ -151,13 +151,7 @@ margin-bottom: 10px;
 margin-right: 20px; 
 display: flex;
 flex-direction: column;
-
 color: ${props => props.theme.colors.primaryDarkText};
-/* 
-  @media screen and (min-width: 802px) {
-  margin-top: 10px;
-  margin-right: 140px; 
-  } */
 `; 
 
 export const BottomTitleInfo = styled.span`
@@ -197,13 +191,12 @@ export const AddButton = styled.button`
     transform: scale(0.95);
   }
 
-         @media screen and (min-width: 740px) {
+      @media screen and (min-width: 740px) {
     font-size: 16px;
     }
 `;
 
 export const ButtonsBox = styled.div`
   display: flex; 
- 
 `; 
 

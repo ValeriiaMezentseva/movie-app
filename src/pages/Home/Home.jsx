@@ -1,9 +1,11 @@
  import { useState, useEffect, useRef, Suspense } from "react";
 import { useLocation, Outlet } from "react-router-dom";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+
 import { getTrendingMoviesByGenre, getTrendingAll } from "services/api";
 import { Loader } from "components/Loader/Loader";
 import noPoster from '../../images/no-poster.jpeg';
+
 import {
     Title,
     TrendingBox,

@@ -84,6 +84,6 @@ const WatchList = () => {
             </Suspense>
     </Container>
   );
-};
+}; 
 
 export default WatchList;

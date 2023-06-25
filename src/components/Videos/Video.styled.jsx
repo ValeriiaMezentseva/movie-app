@@ -29,6 +29,8 @@ transition: color 200ms linear;
     pointer-events: none;
     background-color: ${props => props.theme.colors.primaryLightText};
     border-color: ${props => props.theme.colors.tertiaryLightText};
+    color: black;
+    font-size: 12px;
   }
 `;
 
@@ -43,5 +45,6 @@ export const Icon = styled(BsFillPlayBtnFill)`
   padding: 0; 
   margin: 0; 
   margin-left: 8px; 
-`
+`; 
+
 

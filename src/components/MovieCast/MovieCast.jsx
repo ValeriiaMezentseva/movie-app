@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
-import { getMovieCast, getSeriesCast } from "services/api";
 import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+import { getMovieCast, getSeriesCast } from "services/api";
+
 import { Loader } from "components/Loader/Loader";
+
 import { CastList, CastItem, Name, Character, NoCast } from "./MovieCast.styled";
 import noPoster from '../../images/no-poster.jpeg';
-import PropTypes from 'prop-types';
+
 
 const Cast = () => {
     const [cast, setCast] = useState(null);

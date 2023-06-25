@@ -57,14 +57,9 @@ export const ModalWindow = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-   width: 320px;
+  width: 320px;
   max-width: 80%;
   max-height: 80%; 
-
-
-
-
   overflow-y: auto;
   z-index: 5;
 
