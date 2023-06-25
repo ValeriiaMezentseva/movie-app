@@ -64,7 +64,7 @@ const Video = () => {
             Play <Icon />
           </BtnText>
         ) : (
-          <BtnText>{disabled ? "We don't have this trailer :(" : "Trailer"}</BtnText>
+          <BtnText>{disabled ? "No trailer :(" : "Trailer"}</BtnText>
         )}
       </Button>
     </div>

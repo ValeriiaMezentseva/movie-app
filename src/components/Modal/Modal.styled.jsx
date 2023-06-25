@@ -46,17 +46,21 @@ export const CloseButton = styled.button`
     fill: red;
   }
 
-  transition: transform 0.3s ease-in-out; /* Add transform animation */
+  transition: transform 0.3s ease-in-out; 
 
   &:hover {
-    transform: scale(1.2); /* Apply scale transformation on hover */
+    transform: scale(1.2);
   }
 `;
 
 export const ModalWindow = styled.div`
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  animation: ${fadeIn} 0.3s ease-in; /* Add fade-in animation */
+  transform: translate(-50%, -50%);
+  animation: ${fadeIn} 0.3s ease-in;
+
+  border-radius: 8px;
+  overflow-y: auto;
+  z-index: 5;
 `;

@@ -47,25 +47,10 @@ min-height: 100vh;
   width: 100%;
   margin: 0 auto;
   padding: 10px; 
-
-    /* @media screen and (min-width: 480px) and (max-width: 767px) {
-    width: 480px;
-
-  } */
-/* 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 768px;
-
-  } */
    @media screen and (min-width: 1280px){
-    /* width: 1220px; */
     background-size: contain;
 
   }
-
-  /* @media screen and (min-width: 1440px) {
-    width: 100%;
-  } */
 `;
 
 export const Header = styled.div`
@@ -84,7 +69,7 @@ export const Header = styled.div`
 export const Nav = styled.nav`
   display: flex;
    align-items: center;
-   margin-left: 55px;
+   margin-left: 15px;
         @media screen and (min-width: 1079px) {
       margin-left: 75px;
   }
