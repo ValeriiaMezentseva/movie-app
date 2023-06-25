@@ -7,7 +7,6 @@ import {
   MobileNav,
   Link,
   MobileMenuCloseIcon,
-  MobileMenuTop,
   ThemeButton,
 } from "../SharedLayout.styled";
 
