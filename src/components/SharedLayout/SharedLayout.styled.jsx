@@ -35,6 +35,8 @@ font-size: 20px;
 
 export const Container = styled.div`
 min-height: 100vh;
+display: flex;
+ flex-direction: column;
 
   background-image: linear-gradient(
     180deg,
@@ -44,9 +46,8 @@ min-height: 100vh;
   background-repeat: repeat;
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
+  min-width: 100vw;
   margin: 0 auto;
-  padding: 10px; 
    @media screen and (min-width: 1280px){
     background-size: contain;
 
@@ -115,21 +116,25 @@ export const Collection = styled.div`
   }
 `
 
+export const MainContainer = styled.div`
+  flex: 1;
+`;
+
 export const Footer = styled.footer`
-  position: relative;
-  margin-top: 20px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* Adjust this value according to your design */
+  background-color: ${props => props.theme.colors.backgroundColor};
   color: ${props => props.theme.colors.primaryDarkText};
-  
 `; 
 
 export const FooterText = styled.div`
-  position: relative;
-  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-   height: 30px;
-   padding: 10px 10px; 
+  height: 30px;
+  padding: 10px;
   background-color: ${props => props.theme.colors.backgroundColor};
 
   span {
@@ -139,9 +144,7 @@ export const FooterText = styled.div`
     line-height: 14px;
     letter-spacing: -0.01em;
     text-align: left;
-    margin-right: 5px; 
-    
-    
+    margin-right: 5px;
   }
 `; 
 

@@ -17,13 +17,43 @@ export const Link = styled(NavLink)`
 
 export const Title = styled.h2`
   text-align: center;
+   font-size:16px; 
   margin-bottom: 0;
-  color: ${props => props.theme.colors.primaryDarkText};
+    text-transform:uppercase; 
+    color: ${props => props.theme.colors.primaryDarkText};
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+       @media screen and (min-width: 480px){
+     font-size:20px; 
+
+  }
 `;
 
+export const PageTitle = styled.h1`
+  font-size:20px; 
+  font-weight:700;  
+  letter-spacing:1px; 
+  text-transform:uppercase; 
+  text-align:center; 
+  margin:auto;
+  color: ${props => props.theme.colors.primaryDarkText};
+  
+   padding-bottom:13px;
+
+text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+
+   @media screen and (min-width: 480px){
+     font-size:26px; 
+
+  }
+`; 
+
 export const Container = styled.main`
-  margin: 10px;
-  padding: 0 16px;
+  margin: 0;
+  padding: 0;
+width: 100%
+
 `;
 
 export const TrendingBox = styled.div`
@@ -44,6 +74,8 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
 export const ListBox = styled.div`
   display: flex;  
   flex-direction: column; 
+  margin: 10px;
+
 
 `; 
 
@@ -51,8 +83,8 @@ export const MovieList = styled.ul`
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 20px;
-  margin: 0;
+  padding: 0;
+  margin: 10px;
   list-style-type: none;
  
 
@@ -67,16 +99,16 @@ export const MovieList = styled.ul`
 `;
 
 export const ScrollButton = styled.button`
- display: flex;
+ display: none;
   align-items: center;
   justify-content: center;
   background-color: transparent;
   border: none;
   color: ${props => props.theme.colors.redColor};
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   padding: 0;
-  margin: 0 8px;
+  margin: 0 5px;
   transition: opacity 200ms ease-in-out;
 
   &:hover {
@@ -84,16 +116,20 @@ export const ScrollButton = styled.button`
     transform: scale(1.2);
     transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+         @media screen and (min-width: 480px){
+       display: flex;
+
+  }
 `;
 
 export const ScrollLeftButton = styled(ScrollButton)`
   visibility: ${({ show }) => (show ? "visible" : "hidden")};
-  font-size: 35px;
+ 
 `;
 
 export const ScrollRightButton = styled(ScrollButton)`
   visibility: ${({ show }) => (show ? "visible" : "hidden")};
-  font-size: 35px;
+ 
 `;
 
 export const MovieCardBox = styled.li`

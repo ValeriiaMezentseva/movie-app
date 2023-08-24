@@ -23,7 +23,7 @@ export const InfoWrapper = styled.div`
 `;
 
 export const Image = styled.img`
- width: 280px;
+ width: 100%;
  margin-top: 18px; 
   
   @media screen and (min-width: 480px) {
@@ -41,11 +41,11 @@ export const Image = styled.img`
 export const MovieDetails = styled.div`
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 100%;
  align-items: flex-start;
 
         @media screen and (min-width: 480px) {
-   width: 410px;
+   width: 300px;
     align-items: center;
   }
   
@@ -90,6 +90,9 @@ export const OverView = styled.p`
      @media screen and (min-width: 678px) {
      margin-bottom: 30px;
   }
+       @media screen and (max-width: 680px) {
+     margin-right: 0;
+  }
 `;
 
 export const BottomInfo = styled.div`
@@ -100,12 +103,17 @@ export const BottomInfo = styled.div`
   flex-direction: column;
   color: ${props => props.theme.colors.primaryDarkText};
 
+             @media screen and (max-width: 340px) {
+  margin-right: 15px;
+  }
+
          @media screen and (min-width: 480px) {
-   margin-right: 130px;
+   margin-right: 70px;
   }
            @media screen and (min-width: 678px) {
   margin-right: 100px;
   }
+
 `;
 
 export const BottomTitleInfo = styled.span`
@@ -116,8 +124,7 @@ export const BottomTitleInfo = styled.span`
 
 export const BottomInfoList = styled.div`
   display: flex;
-  margin-left: 16px;
-  margin-right: 16px; 
+
 `;
 
 export const AddButton = styled.button`

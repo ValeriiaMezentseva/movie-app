@@ -2,14 +2,13 @@
 import { useLocation, Outlet } from "react-router-dom";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
-import { getTrendingMoviesByGenre, getTrendingAll } from "services/api";
+import { getTrendingMoviesByGenre } from "services/api";
 import { Loader } from "components/Loader/Loader";
 import noPoster from '../../images/no-poster.jpeg';
 
 import {
+    PageTitle,
     Title,
-    TrendingBox,
-    TrendingList,
     Container,
     ListBox,
     MovieList,
@@ -32,7 +31,6 @@ const genres = [
 
 const Home = () => {
   const [genreMovies, setGenreMovies] = useState({});
-  const [trendingMovies, setTrendingMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const genreListsRefs = useRef([]);
   const location = useLocation();
@@ -55,14 +53,6 @@ const Home = () => {
         console.error(error);
         setLoading(false);
       });
-
-    getTrendingAll()
-      .then(results => {
-        setTrendingMovies(results);
-      })
-      .catch(error => {
-        console.error(error);
-      });
   }, []);
 
   const scrollLeft = genreIndex => {
@@ -79,33 +69,7 @@ const Home = () => {
         <>
             {!loading ? (
                 <Container>
-                    <TrendingBox>
-                        <Title style={{ textAlign: "center", margin: '0'}}>Trending Today</Title>
-                        <TrendingList>
-                            <ScrollLeftButton show={true} onClick={() => scrollLeft(-1)}>
-                                <BsArrowLeftCircle />
-                            </ScrollLeftButton>
-                            <MovieList ref={ref => (genreListsRefs.current[-1] = ref)}>
-                                {trendingMovies.map(({ id, title, poster_path, vote_average }) => (
-                                    <MovieCardBox key={id}>
-                                        <Link to={`${prevUrl}${id}`} state={{ from: location }}>
-                                            <MovieCard id={id}>
-                                                <Poster
-                                                    src={poster_path ? `https://image.tmdb.org/t/p/w300/${poster_path}` : noPoster}
-                                                    alt={title}
-                                                    loading="lazy"
-                                                />
-                                                <Rating>{vote_average.toFixed(1)}</Rating>
-                                            </MovieCard>
-                                        </Link>
-                                    </MovieCardBox>
-                                ))}
-                            </MovieList>
-                            <ScrollRightButton show={true} onClick={() => scrollRight(-1)}>
-                                <BsArrowRightCircle />
-                            </ScrollRightButton>
-                        </TrendingList>
-                    </TrendingBox>
+                    <PageTitle>Discover Movies</PageTitle>
                     <ListBox>
                         {genres.map(({ id, name }, index) => (
                             <div key={id}>

@@ -14,6 +14,7 @@ import MobileMenu from "./MobileMenu/MobileMenu";
 
 import {
   Container,
+  MainContainer,
   Header,
   Link,
   Nav,
@@ -85,9 +86,11 @@ const SharedLayout = () => {
       {toggleMenu && (
         <MobileMenu isOpen={toggleMenu} toggleMenuHandler={toggleMenuHandler}/>
       )}
+      <MainContainer>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
+        </MainContainer>
          <Footer>
       <FooterText>
         <span>© 2023 | All Rights Reserved | </span>

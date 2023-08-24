@@ -25,8 +25,8 @@ export const Overlay = styled.div`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 25px;
-  right: 30px; 
+  top: 20px;
+  right: 14px; 
 
   display: flex;
   align-items: center;
